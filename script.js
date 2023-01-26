@@ -21,15 +21,13 @@ data.forEach(function(el,i){
     const priceBox = document.createElement("p");
     const buyBtn = document.createElement("button");
     const input = document.createElement("input");
+    input.min = 0
+    input.defaultValue = 1
     input.setAttribute("type", "number")
-    buyBtn.id = ("btn" + i)
     input.className = "element_input"
-    
     buyBtn.addEventListener("click", clickbtn)
     function clickbtn(){
-        if (input.value>0){
-            basket.textContent = total += +input.value
-        }
+        basket.textContent = total += +input.value
     }
     const btnText = document.createTextNode("Add to Basket")
     buyBtn.appendChild(btnText)
