@@ -1,7 +1,5 @@
 const main = document.getElementById("main")
-
-
-
+const basket = document.getElementById("basket")
 
 const data = [
     {name:"card1",price:"5,900.00 AMD",text: "photo print t-shirt",image: "https://static.zara.net/photos///2022/I/0/2/p/6224/317/250/2/w/750/6224317250_6_1_1.jpg?ts=1658302727669"},
@@ -12,7 +10,8 @@ const data = [
     {name:"card6",price:"9,900.00 AMD",text: "knit fabric trainers",image: "https://static.zara.net/photos///2022/I/1/2/p/2202/020/107/2/w/750/2202020107_6_3_1.jpg?ts=1659968289561"},
 ]
 
-data.forEach(function(el){
+let total = 0
+data.forEach(function(el,i){
     const item = document.createElement("div");
     item.className = "product";
     const image = document.createElement("img");
@@ -21,7 +20,17 @@ data.forEach(function(el){
     const textBox = document.createElement("p");
     const priceBox = document.createElement("p");
     const buyBtn = document.createElement("button");
-    buyBtn.className = "btn"
+    const input = document.createElement("input");
+    input.setAttribute("type", "number")
+    buyBtn.id = ("btn" + i)
+    input.className = "element_input"
+    
+    buyBtn.addEventListener("click", clickbtn)
+    function clickbtn(){
+        if (input.value>0){
+            basket.textContent = total += +input.value
+        }
+    }
     const btnText = document.createTextNode("Add to Basket")
     buyBtn.appendChild(btnText)
     textBox.textContent = el.text;
@@ -30,20 +39,20 @@ data.forEach(function(el){
     item.appendChild(textBox)
     item.appendChild(priceBox)
     item.appendChild(buyBtn)
+    item.appendChild(input)
     main.appendChild(item)
 })
 
-const basket = document.getElementById("basket")
-const btn = document.getElementsByClassName("btn")
+// const btn = document.getElementsByClassName("btn")
 
-Array.from(btn).forEach( function(el){
-    el.addEventListener("click", clickbtn)
-})
+// Array.from(btn).forEach( function(el){
+//     el.addEventListener("click", clickbtn)
+// })
 
 
-function clickbtn(){
-    basket.textContent++
-}
+// function clickbtn(){
+//     basket.textContent++
+// }
 
 
 

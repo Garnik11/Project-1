@@ -91,14 +91,6 @@
 
 
 
-
-
-
-
-
-
-
-
 .main{
     margin: 85px 70px;
     display: inline-grid;
@@ -186,5 +178,13 @@
 }
 .product button:hover{
     background-color: aqua;
+}
+
+
+.element_input{
+    width: 25px;
+    margin-left: 5px;
+    border: 1px solid rgba(83, 80, 80, 0.5);
+    border-radius: 5px;
 }
 
