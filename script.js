@@ -43,16 +43,7 @@ data.forEach(function(el,i){
     main.appendChild(item)
 })
 
-// const btn = document.getElementsByClassName("btn")
 
-// Array.from(btn).forEach( function(el){
-//     el.addEventListener("click", clickbtn)
-// })
-
-
-// function clickbtn(){
-//     basket.textContent++
-// }
 
 
 
