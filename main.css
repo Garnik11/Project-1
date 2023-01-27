@@ -167,7 +167,7 @@
 }
 
 .product p{
-    margin-bottom: 7px;
+    margin: 7px;
 }
 
 .product button{
@@ -176,15 +176,18 @@
     cursor: pointer;
     border: 1px solid rgba(152, 136, 136, 0.3);
 }
-.product button:hover{
-    background-color: aqua;
-}
 
 
 .element_input{
-    width: 25px;
+    width: 35px;
     margin-left: 5px;
     border: 1px solid rgba(83, 80, 80, 0.5);
     border-radius: 5px;
 }
 
+
+
+.buyBtn:active{
+    box-shadow: aqua 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;;
+    background-color: aqua;
+}

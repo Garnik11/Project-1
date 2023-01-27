@@ -20,10 +20,15 @@ data.forEach(function(el,i){
     const textBox = document.createElement("p");
     const priceBox = document.createElement("p");
     const buyBtn = document.createElement("button");
+    buyBtn.className = "buyBtn"
     const input = document.createElement("input");
-    input.min = 0
+    input.type = ("Number")
+    input.min = 1
+    const available = document.createElement("p")
+    let maxRandomNumber = Math.floor(Math.random() * 15) + 1;
+    available.textContent = "in available " + maxRandomNumber
+    input.max = maxRandomNumber
     input.defaultValue = 1
-    input.setAttribute("type", "number")
     input.className = "element_input"
     buyBtn.addEventListener("click", clickbtn)
     function clickbtn(){
@@ -38,11 +43,14 @@ data.forEach(function(el,i){
     item.appendChild(priceBox)
     item.appendChild(buyBtn)
     item.appendChild(input)
+    item.appendChild(available)
     main.appendChild(item)
 })
 
 
 
+const btn = document.getElementById("mouse")
 
-
-
+function click(){
+    btn.style.boxShadow = "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset"
+}
